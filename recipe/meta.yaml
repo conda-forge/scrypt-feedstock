@@ -1,6 +1,6 @@
 {% set name = "scrypt" %}
-{% set version = "0.8.4" %}
-{% set sha256 = "4c7a8099fd5da237de8f7b9bbe92aa6df070f70f12cc419cb8ce6eba275ddfaf" %}
+{% set version = "0.8.5" %}
+{% set sha256 = "cdc276fed2096f039575633499ecbe92c8eddf09aa12598a11a22f56f898539f" %}
 
 
 package:
