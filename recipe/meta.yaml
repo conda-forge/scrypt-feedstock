@@ -13,17 +13,18 @@ source:
   sha256: {{ sha256|lower }}
 
 build:
-  number: 0
+  number: 1
   script: python -m pip install --no-deps --ignore-installed .
 
 requirements:
   build:
+    - {{ compiler('c') }}
+  host:
     - python
     - pip
-    - toolchain
-    - openssl 1.0.*                # [not win]
+    - openssl                      # [not win]
   run:
-    - openssl 1.0.*                # [not win]
+    - openssl                      # [not win]
     - python
 
 test:
