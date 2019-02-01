@@ -13,8 +13,9 @@ source:
   sha256: {{ sha256|lower }}
 
 build:
-  number: 1002
-  script: python -m pip install --no-deps --ignore-installed .
+  number: 1003
+  script:
+    - "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
 
 requirements:
   build:
@@ -22,10 +23,12 @@ requirements:
   host:
     - python
     - pip
-    - openssl                      # [not win]
+    - openssl
+    - cffi >=1.7
   run:
-    - openssl                      # [not win]
     - python
+    - openssl
+    - cffi >=1.7
 
 test:
   imports:
