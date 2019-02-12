@@ -1,6 +1,6 @@
 {% set name = "scrypt" %}
-{% set version = "0.8.12" %}
-{% set sha256 = "8314137EF8C370D30BE919A1421200399EED1E5A2A1E66A18E29AEC79C0191EE" %}
+{% set version = "0.8.13" %}
+{% set sha256 = "1377B1ADC98C4152694BF5D7E93B41A9D2E9060AF69B747CFAD8C93AC426F9EA" %}
 
 
 package:
@@ -13,8 +13,10 @@ source:
   sha256: {{ sha256|lower }}
 
 build:
-  number: 1
+  number: 0
   script:
+    - set SCRYPT_WINDOWS_LINK_LEGACY_OPENSSL=1  # [win and py==27]
+    - set SCRYPT_WINDOWS_LINK_LEGACY_OPENSSL=0  # [win and py!=27]
     - "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
 
 requirements:
@@ -23,11 +25,12 @@ requirements:
   host:
     - python
     - pip
-    - openssl # [not win]
-
+    - openssl
+    - cffi >=1.7
   run:
     - python
-    - openssl # [not win]
+    - openssl
+    - cffi >=1.7
 
 test:
   imports:
