@@ -15,8 +15,6 @@ source:
 build:
   number: 1
   script:
-    - set SCRYPT_WINDOWS_LINK_LEGACY_OPENSSL=1  # [win and py==27]
-    - set SCRYPT_WINDOWS_LINK_LEGACY_OPENSSL=0  # [win and py!=27]
     - "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
 
 requirements:
@@ -25,12 +23,11 @@ requirements:
   host:
     - python
     - pip
-    - openssl
-    - cffi >=1.7
+    - openssl # [not win]
+
   run:
     - python
-    - openssl
-    - cffi >=1.7
+    - openssl # [not win]
 
 test:
   imports:
