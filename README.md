@@ -1,7 +1,7 @@
 About scrypt
 ============
 
-Home: https://bitbucket.org/mhallin/py-scrypt/
+Home: https://github.com/holgern/py-scrypt
 
 Package license: BSD-2-Clause
 
