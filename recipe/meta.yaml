@@ -1,6 +1,5 @@
 {% set name = "scrypt" %}
 {% set version = "0.8.17" %}
-{% set sha256 = "25b5075f2238be93af1cd574540a5ea01b8547f9b678aa72d22fce22577475ec" %}
 
 
 package:
@@ -8,9 +7,8 @@ package:
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: {{ sha256|lower }}
+  sha256: 25b5075f2238be93af1cd574540a5ea01b8547f9b678aa72d22fce22577475ec
 
 build:
   number: 1
@@ -38,7 +36,6 @@ requirements:
 test:
   imports:
     - scrypt
-  commands:
 
 about:
   home: https://github.com/holgern/py-scrypt
