@@ -11,8 +11,8 @@ jobs:
       win_64_openssl1.1.1python3.10.____cpython:
         CONFIG: win_64_openssl1.1.1python3.10.____cpython
         UPLOAD_PACKAGES: 'True'
-      win_64_openssl1.1.1python3.7.____cpython:
-        CONFIG: win_64_openssl1.1.1python3.7.____cpython
+      win_64_openssl1.1.1python3.11.____cpython:
+        CONFIG: win_64_openssl1.1.1python3.11.____cpython
         UPLOAD_PACKAGES: 'True'
       win_64_openssl1.1.1python3.8.____73_pypy:
         CONFIG: win_64_openssl1.1.1python3.8.____73_pypy
@@ -29,8 +29,8 @@ jobs:
       win_64_openssl3python3.10.____cpython:
         CONFIG: win_64_openssl3python3.10.____cpython
         UPLOAD_PACKAGES: 'True'
-      win_64_openssl3python3.7.____cpython:
-        CONFIG: win_64_openssl3python3.7.____cpython
+      win_64_openssl3python3.11.____cpython:
+        CONFIG: win_64_openssl3python3.11.____cpython
         UPLOAD_PACKAGES: 'True'
       win_64_openssl3python3.8.____73_pypy:
         CONFIG: win_64_openssl3python3.8.____73_pypy
@@ -87,10 +87,12 @@ jobs:
         call activate base
         run_conda_forge_build_setup
       displayName: conda-forge build setup
-    
 
     - script: |
         call activate base
+        if EXIST LICENSE.txt (
+          copy LICENSE.txt "recipe\\recipe-scripts-license.txt"
+        )
         conda.exe mambabuild "recipe" -m .ci_support\%CONFIG%.yaml --suppress-variables
       displayName: Build recipe
       env:
