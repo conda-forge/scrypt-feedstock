@@ -1,5 +1,5 @@
 {% set name = "scrypt" %}
-{% set version = "0.8.18" %}
+{% set version = "0.8.20" %}
 
 
 package:
@@ -8,10 +8,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: bcf04257af12e6d52974d177a7b08e314b66f350a73f9b6f7b232d69a6a1e041
+  sha256: 0d226c1c6744fb2e308b391410669b1df5cfe82637ffcb5ed489bf82b2d2eb78
 
 build:
-  number: 4
+  number: 0
   script:
     - set SCRYPT_WINDOWS_LINK_LEGACY_OPENSSL=0  # [win]
     - "{{ PYTHON }} %RECIPE_DIR%\\fix_openssl_win.py setup.py"     # [win]
