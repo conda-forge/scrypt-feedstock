@@ -11,7 +11,7 @@ source:
   sha256: 0d226c1c6744fb2e308b391410669b1df5cfe82637ffcb5ed489bf82b2d2eb78
 
 build:
-  number: 0
+  number: 1
   script:
     - set SCRYPT_WINDOWS_LINK_LEGACY_OPENSSL=0  # [win]
     - "{{ PYTHON }} %RECIPE_DIR%\\fix_openssl_win.py setup.py"     # [win]
