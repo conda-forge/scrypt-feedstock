@@ -372,6 +372,3 @@ Feedstock Maintainers
 * [@holgern](https://github.com/holgern/)
 * [@jan-janssen](https://github.com/jan-janssen/)
 
-
-<!-- dummy commit to enable rerendering -->
-
