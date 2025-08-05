@@ -1,5 +1,5 @@
 {% set name = "scrypt" %}
-{% set version = "0.8.29" %}
+{% set version = "0.9.1" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: a05968e7f45209b6bbf12568bea5e70ef65f239d7ea35065f414bfab28ba4091
+  sha256: cfc33ce16fcac3d1c6b4371f2aba55e189df7197c7b5b29b7aef007ef4a9889b
 
 build:
   number: 0
