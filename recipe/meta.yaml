@@ -11,7 +11,7 @@ source:
   sha256: 0d212010ba8c2e55475ba6258f30cee4da0432017514d8f6e855b7f1f8c55c77
 
 build:
-  number: 1
+  number: 2
   script:
     - "{{ PYTHON }} %RECIPE_DIR%\\fix_openssl_win.py setup.py"     # [win]
     - "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
